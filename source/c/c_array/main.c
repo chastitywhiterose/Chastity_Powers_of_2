@@ -4,9 +4,9 @@
 int main()
 {
  int x,y,z;
- #define length 1000 
- char a[length];
+ #define length 1000
  int length2=1;
+ char a[length];
 
  x=0;
  while(x<length)

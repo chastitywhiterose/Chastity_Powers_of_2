@@ -1,11 +1,11 @@
 # Chastity_Powers_of_2
 A repository for examples of C/C++ code that generate the powers of two integer sequence
 
-# Project Goals
+## Project Goals
 
 I plan to build the exact same program using a variety of different programming concepts. The basic method will always be the same but the memory management might differ between examples. This will become clear if you are looking at the C and C++ source files and seeing where the minor differences are.
 
-# History
+## History
 
 When I first started programming, and long before I was good enough to make video games, I was fascinated with the powers of two sequence. It was my special interest because it was so simple and yet at the same time underappreciated. I was also learning about arrays and so I came up with an algorithm that would be able to print the really high powers of two even if they were thousands of digits long. Since numbers are infinite, there is no limit except available memory on your computer that you can allocate.
 

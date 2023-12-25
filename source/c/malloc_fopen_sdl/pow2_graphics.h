@@ -41,16 +41,58 @@ ttf_print_wrapped(text,10,0);
 void ttf_pow2_anim()
 {
 
- ttf_print_wrapped(text,10,0);
+ /*ttf_print_wrapped(text,10,0);*/
 
  /*ttf_print_wrapped(a,10,0);*/
 
+ /*this is a highly optimized routine for scrolling text*/
 
- SDL_RenderPresent(renderer);
+ x=16;y=0;
+
+ text_surface=TTF_RenderText_Solid_Wrapped(font, a, font_color,width);
+
+ w=text_surface->w;
+ h=text_surface->h;
+
+ /*printf("Actual surface size is w=%d,h=%d\n",w,h);*/
+
+ if(text_surface != NULL)
+ {
+  text_texture = SDL_CreateTextureFromSurface(renderer, text_surface);
+  SDL_FreeSurface(text_surface);
+ }
+
+ srcrect.x=0;
+ srcrect.y=0;
+ srcrect.w=w;
+ srcrect.h=h;
+
+ dstrect=srcrect;
+ dstrect.x=x;
+ dstrect.y=height;
+
+ SDL_SetRenderDrawColor(renderer,255,255,255,255);
+
+ delay=1000/fps;
 
  loop=1;
  while(loop)
  {
+  sdl_time = SDL_GetTicks();
+  sdl_time1 = sdl_time+delay;
+
+ dstrect.y--;
+
+ SDL_RenderClear(renderer);
+ SDL_RenderCopy(renderer, text_texture, &srcrect, &dstrect);
+ SDL_RenderPresent(renderer);
+
+ /*time loop used to slow the game down so users can see it*/
+ while(sdl_time<sdl_time1)
+ {
+  sdl_time=SDL_GetTicks();
+ }
+
   while(SDL_PollEvent(&e))
   {
    if(e.type == SDL_QUIT){loop=0;}
@@ -59,6 +101,10 @@ void ttf_pow2_anim()
     if(e.key.keysym.sym==SDLK_ESCAPE){loop=0;}
    }
   }
+
  }
+
+ /*free the memory and delete the texture*/
+ SDL_DestroyTexture(text_texture);
 
 }

@@ -27,9 +27,14 @@ SDL_Surface *text_surface;
 SDL_Texture *text_texture;
 SDL_Rect srcrect,dstrect;
 
+/*variables for controlling framerate in animation*/
+
+int fps=60,delay; /*frames per second*/
+int sdl_time,sdl_time1;
+
 /*most of the variables specific to the powers of two program had to be moved to global scope so that other functions can see them*/
 
- int length=1000; 
+ int length=1000;
  int length2=1;
 
  FILE *fp;
@@ -61,7 +66,7 @@ int main()
  if(fp==NULL){printf("Failed to create file \"%s\".\n",filename);return 1;}
  
  z=0;
- while(z<=16)
+ while(z<=256)
  {
 
   x=length2;
@@ -108,6 +113,7 @@ int main()
 
  y=0;
 
+x=0;
 while(y!=EOF)
 {
  y=fgetc(fp);
@@ -115,6 +121,7 @@ while(y!=EOF)
  {
   /*putchar(y);*/
   a[x]=y;
+  x++;
  }
 }
 a[x]=0;
@@ -167,7 +174,7 @@ a[x]=0;
 
  /*ttf_test2();*/
 
- /*ttf_title_screen();*/
+ ttf_title_screen();
 
  strcpy(text,"Chastity White Rose");
  ttf_pow2_anim();

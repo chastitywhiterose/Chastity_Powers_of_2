@@ -1,0 +1,1 @@
+The program in this folder uses malloc for allocating the memory of the array used for powers of two. It also opens and writes to a file instead of the console. This is arguably more useful because it is easy to copy and paste or upload a text file than it is to retrieve output from the terminal.

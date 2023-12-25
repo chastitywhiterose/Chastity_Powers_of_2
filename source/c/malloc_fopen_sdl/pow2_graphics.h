@@ -9,12 +9,11 @@ this header file is meant to contain all the functions which write things to the
 void ttf_title_screen()
 {
 
-strcpy(text,"I am Chastity White Rose, the Vegan Virgin! I am the creator of the video games Chaste Tris, Chaste Puyo, and Chaste Panel. I created this special 1989 edition of Chaste Tris to use only black and white to remind us of when Tetris was released in 1989 for the Game Boy.\n\n");
+strcpy(text,"I am Chastity White Rose, the Vegan Virgin! I am the creator of the video games Chaste Tris, Chaste Puyo, and Chaste Panel.\nBut this program is based on how I first got my start in computer programming! Before I knew how to do graphical programs with SDL, I used the standard C library to output text to the console. My greatest achievement back then was printing the powers of two sequence to thousands of digits! ");
 
-strcat(text,"This game and the original Chaste Tris are available on my programming Patreon account.\n\npatreon.com/ChastityWhiteRoseProgramming\n\nYou may also want to follow me on Twitch and YouTube where I frequently stream myself playing my own games or playing official Tetris games and sometimes playing online chess.\n\nhttps://www.twitch.tv/chastitywhiterose\n\nhttps://www.youtube.com/@chastitywhiterose");
+strcat(text,"This program and the games I made are available on my programming Patreon account.\n\npatreon.com/ChastityWhiteRoseProgramming\n\nYou may also want to follow me on Twitch and YouTube where I frequently stream myself playing my own games or playing official Tetris games and sometimes playing online chess.\n\nhttps://www.twitch.tv/chastitywhiterose\n\nhttps://www.youtube.com/@chastitywhiterose");
 
-ttf_print_wrapped(text,10,0);
-
+ ttf_print_wrapped(text,10,0);
 
  SDL_RenderPresent(renderer);
 

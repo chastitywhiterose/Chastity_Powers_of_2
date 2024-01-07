@@ -1,0 +1,1 @@
+This program was an experiment to see if I could play audio files to represent each of the decimal digits in my powers of two program. It actually worked very well and I was able to use code from Chaste Panel to load and play the audio.

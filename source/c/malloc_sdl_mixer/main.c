@@ -60,7 +60,7 @@ int main()
  a[0]=1;
 
  z=0;
- while(z<8)
+ while(z<=64)
  {
 
  /*
